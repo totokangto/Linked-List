@@ -30,6 +30,9 @@
     <ClCompile Include="add_k.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="delete_k.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="add_first.h">
@@ -45,6 +48,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="add_k.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="delete_k.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

@@ -23,6 +23,7 @@
     <ClCompile Include="access_node.c" />
     <ClCompile Include="add_k.c" />
     <ClCompile Include="add_last.c" />
+    <ClCompile Include="delete_k.c" />
     <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
@@ -30,6 +31,7 @@
     <ClInclude Include="access_node.h" />
     <ClInclude Include="add_k.h" />
     <ClInclude Include="add_last.h" />
+    <ClInclude Include="delete_k.h" />
     <ClInclude Include="makeNode.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

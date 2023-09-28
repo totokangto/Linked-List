@@ -5,6 +5,7 @@
 #include "add_last.h"
 #include "access_node.h"
 #include "add_k.h"
+#include "delete_k.h"
 
 
 int main(void) {
@@ -74,7 +75,7 @@ int main(void) {
 	printf("k(=3)번째 노드의 value : %d\n", k_node->value); // 7 출력
 
 
-	// 5. Adding an element at the kth position
+	// 5. Adding an element at the k-th position
 	header = add_k(header,8,4);
 	check = header->next;
 	i = 1;
@@ -84,6 +85,18 @@ int main(void) {
 		check = check->next;
 		i++;
 	} // 4 5 7 8 9 10 출력
+
+
+	// 6. Delete at the k-th position
+	header = delete_k(header, 2);
+	check = header->next;
+	i = 1;
+	printf("------------------------------\nk(=2)번째 노드 제거\n");
+	while (check != NULL) {
+		printf("%d번째 노드 : %d\n", i, check->value);
+		check = check->next;
+		i++;
+	} // 4 7 8 9 10 출력
 
 	free(header);
 	free(node1);
