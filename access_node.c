@@ -7,7 +7,7 @@ NodePtr access_node(NodePtr header, int k) {
 	NodePtr check = header;
 	for (int i = 0; i < k; i++) {
 		check = check->next;
-		// 노드 개수 범위 초과
+		// 노드 개수 범위 초과 > 프로그램 종료
 		if (check == NULL) {
 			printf("\n%d번째 노드는 존재하지 않습니다.\n", k);
 			exit(1);

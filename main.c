@@ -44,7 +44,7 @@ int main(void) {
 	} // 5 7 9 출력
 	
 
-	// 2. Adding an Element at the Beginning(value = 4)
+	// 2. Adding an Element at the Beginning (value = 4)
 	header = add_first(header, 4);
 
 	check = header->next; // header의 value부터 출력해야 하므로 check를 header로 초기화
@@ -75,11 +75,11 @@ int main(void) {
 	printf("k(=3)번째 노드의 value : %d\n", k_node->value); // 7 출력
 
 
-	// 5. Adding an element at the k-th position
+	// 5. Adding an element at the k-th position (value = 8, k = 4)
 	header = add_k(header,8,4);
 	check = header->next;
 	i = 1;
-	printf("------------------------------\nk(=4)번째 위치에 새로운 노드 추가\n");
+	printf("------------------------------\nk(=4)번째 위치에 새로운 노드(value = 8) 추가\n");
 	while (check != NULL) {
 		printf("%d번째 노드 : %d\n", i, check->value);
 		check = check->next;
@@ -87,22 +87,34 @@ int main(void) {
 	} // 4 5 7 8 9 10 출력
 
 
-	// 6. Delete at the k-th position
+	// 6. Delete at the k-th position (k = 2)
 	header = delete_k(header, 2);
 	check = header->next;
 	i = 1;
-	printf("------------------------------\nk(=2)번째 노드 제거\n");
+	printf("------------------------------\nk(=2)번째 노드(value = 5) 제거\n");
 	while (check != NULL) {
 		printf("%d번째 노드 : %d\n", i, check->value);
 		check = check->next;
 		i++;
 	} // 4 7 8 9 10 출력
 
-	free(header);
-	free(node1);
-	free(node2);
-	free(node3);
-	
-	
+
+	check = header;
+	int t = 0;
+	while (check->next != NULL) {
+		check = check->next;
+		t++;
+	} // t는 node 개수
+	printf("------------------------------\n현재 노드 개수 : %d\n", t);
+	// 마지막 노드부터 첫번째 노드까지 역순으로 동적 할당 된 메모리 반환
+	while (t != 0) {
+		free(access_node(header, t));
+		printf("%d번째 노드 메모리 반환 완료\n", t);
+		t--;
+	}
+	free(header); // 헤더 노드에 동적 할당 된 메모리 반환
+	printf("header 노드 메모리 반환 완료");
+
+
 	return 0;
 }
